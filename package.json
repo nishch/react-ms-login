@@ -1,7 +1,7 @@
 {
   "name": "react-ms-login",
   "version": "0.1.0",
-  "description": "",
+  "description": "A react component to implement Microsoft login (via outlook.com, live.com, office365.com).",
   "main": "./src/index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,5 +22,28 @@
     "gulp-uglify": "^2.1.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
-  }
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishant-chaturvedi/react-ms-login.git"
+  },
+  "keywords": [
+    "Microsoft",
+    "login",
+    "office365",
+    "login",
+    "React",
+    "Microsoft",
+    "Login",
+    "React",
+    "office365",
+    "login"
+  ],
+  "bugs": {
+    "url": "https://github.com/nishant-chaturvedi/react-ms-login/issues"
+  },
+  "homepage": "https://github.com/nishant-chaturvedi/react-ms-login#readme"
 }

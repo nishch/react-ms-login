@@ -7,7 +7,7 @@ const uglify = require("gulp-uglify");
 const del = require("del");
 
 gulp.task("clean", function () {
-    return del("./dist/react-ms-login.js");
+    return del("./dist/react-ms-login.min.js");
 });
 
 gulp.task("clean-example", function () {
@@ -26,11 +26,11 @@ gulp.task("build-example", ["clean-example"], function () {
 
 gulp.task("build", ["clean"], function () {
     browserify({
-        entries: "./src/index.jsx",
+        entries: "./src/authComplete.js",
         debug: false
-    }).transform(babelify, { presets: ["react", "es2015"] })
+    }).transform(babelify, { presets: ["es2015"] })
         .bundle()
-        .pipe(source("react-ms-login.js"))
+        .pipe(source("react-ms-login.min.js"))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(gulp.dest("./dist"));

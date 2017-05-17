@@ -1,4 +1,3 @@
-import "./authComplete";
 import React from 'react';
 
 class ReactLoginMS extends React.Component {
