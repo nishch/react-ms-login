@@ -11,7 +11,7 @@ gulp.task("clean", function () {
 });
 
 gulp.task("clean-example", function () {
-    return del("./examples/example.js");
+    return del("./examples/script.js");
 });
 
 gulp.task("build-example", ["clean-example"], function () {
@@ -20,7 +20,7 @@ gulp.task("build-example", ["clean-example"], function () {
         debug: true
     }).transform(babelify, { presets: ["react", "es2015"] })
         .bundle()
-        .pipe(source("example.js"))
+        .pipe(source("script.js"))
         .pipe(gulp.dest("./examples"));
 });
 
