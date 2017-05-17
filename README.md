@@ -18,7 +18,7 @@ npm install react-ms-login --save
 ### Step 3
 You can use this component anywhere in your app as shown below:
 
-```jsx
+```js
 import React from "react";
 import ReactDOM from "react-dom";
 
