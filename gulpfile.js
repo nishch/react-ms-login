@@ -10,14 +10,18 @@ gulp.task("clean", function () {
     return del("./dist/react-ms-login.js");
 });
 
-gulp.task("build-dev", ["clean"], function () {
+gulp.task("clean-example", function () {
+    return del("./examples/example.js");
+});
+
+gulp.task("build-example", ["clean-example"], function () {
     browserify({
         entries: "./examples/example.jsx",
         debug: true
     }).transform(babelify, { presets: ["react", "es2015"] })
         .bundle()
-        .pipe(source("react-ms-login.js"))
-        .pipe(gulp.dest("./dist"));
+        .pipe(source("example.js"))
+        .pipe(gulp.dest("./examples"));
 });
 
 gulp.task("build", ["clean"], function () {
@@ -32,4 +36,4 @@ gulp.task("build", ["clean"], function () {
         .pipe(gulp.dest("./dist"));
 });
 
-gulp.task("default", ["build-dev"]);
+gulp.task("default", ["build"]);
