@@ -12,7 +12,7 @@ gulp.task("clean", function () {
 
 gulp.task("build-dev", ["clean"], function () {
     browserify({
-        entries: "./src/example.jsx",
+        entries: "./examples/example.jsx",
         debug: true
     }).transform(babelify, { presets: ["react", "es2015"] })
         .bundle()

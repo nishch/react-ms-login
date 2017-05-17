@@ -8,11 +8,16 @@ class ReactLoginMS extends React.Component {
         this.startOAuth = this.startOAuth.bind(this);
         this.getOAuthUrl = this.getOAuthUrl.bind(this);
 
+        if (!this.props.clientId)
+            throw new Error("invalid clientId provided for react-ms-login");
+        if (!this.props.redirectUri)
+            throw new Error("invalid redirectUri provided for react-ms-login");
+
         this.state = {
             clientId: this.props.clientId,
             redirectUri: this.props.redirectUri,
-            scopes: this.props.scopes || [],
-            responseType: this.props.responseType
+            scopes: this.props.scopes || ["user.read"],
+            responseType: this.props.responseType || "token"
         }
 
         this.oauthUrl = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
@@ -47,9 +52,19 @@ class ReactLoginMS extends React.Component {
     }
 
     render() {
+        let cssClasses = `btn-microsoft-login ${this.props.cssClass}`
+        let btnContent = "Sign in with Microsoft";
+
+        if (this.props.btnContent) {
+            if (typeof this.props.btnContent === "function")
+                btnContent = <this.props.btnContent />
+            else
+                btnContent = this.props.btnContent
+        }
+
         return (
-            <button type="button" className="btn-microsoft-login" onClick={this.startOAuth}>
-                Sign in with Microsoft
+            <button type="button" className={cssClasses} onClick={this.startOAuth}>
+                {btnContent}
             </button>
         )
     }
