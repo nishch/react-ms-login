@@ -66,12 +66,6 @@
           "react"
         ]
       },
-      "test": {
-        "presets": [
-          "es2015",
-          "react"
-        ]
-      },
       "production": {
         "presets": [
           [

@@ -3,9 +3,12 @@ const webpack = require('webpack');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
-  entry: [
-    './src/index.jsx',
-  ],
+  entry: {
+    "react-ms-login": [
+      './src/index.jsx',
+      './src/authComplete.js'
+    ]
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'react-ms-login.min.js',

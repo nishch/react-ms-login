@@ -6,13 +6,10 @@ module.exports = {
     entry: {
         example: [
             './examples/example.jsx'
-        ],
-        authComplete: [
-            './src/authComplete.js'
         ]
     },
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'examples'),
         filename: '[name].js'
     },
     module: {
