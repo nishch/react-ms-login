@@ -6,8 +6,12 @@ const buffer = require("vinyl-buffer");
 const uglify = require("gulp-uglify");
 const del = require("del");
 
-gulp.task("clean", function () {
+gulp.task("clean-authcomplete", function () {
     return del("./dist/react-ms-login.min.js");
+});
+
+gulp.task("clean-component", function () {
+    return del("./dist/react-component.min.js");
 });
 
 gulp.task("clean-example", function () {
@@ -24,7 +28,19 @@ gulp.task("build-example", ["clean-example"], function () {
         .pipe(gulp.dest("./examples"));
 });
 
-gulp.task("build", ["clean"], function () {
+gulp.task("build-component", ["clean-component"], function () {
+    browserify({
+        entries: "./src/index.jsx",
+        debug: false
+    }).transform(babelify, { presets: ["es2015", "react"] })
+        .bundle()
+        .pipe(source("react-component.min.js"))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulp.dest("./dist"));
+});
+
+gulp.task("build-authcomplete", ["clean-authcomplete"], function () {
     browserify({
         entries: "./src/authComplete.js",
         debug: false
@@ -36,4 +52,4 @@ gulp.task("build", ["clean"], function () {
         .pipe(gulp.dest("./dist"));
 });
 
-gulp.task("default", ["build"]);
+gulp.task("default", ["build-component", "build-authcomplete"]);

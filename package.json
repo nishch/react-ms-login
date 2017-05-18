@@ -2,7 +2,7 @@
   "name": "react-ms-login",
   "version": "0.1.1",
   "description": "A react component to implement Microsoft login (via outlook.com, live.com, office365.com).",
-  "main": "./src/index.jsx",
+  "main": "dist/react-component.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
