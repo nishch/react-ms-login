@@ -55,7 +55,7 @@ Content of authComplete.html is shown below.
 <html>
 
 <head>
-    <script src="dist/react-ms-login.min.js"></script>
+    <script src="dist/authComplete.js"></script>
     <script>
         ReactLoginMS.authComplete();
     </script>
@@ -65,5 +65,5 @@ Content of authComplete.html is shown below.
 </body>
 </html>
 ```
-first script reference points to `react-ms-login.min.js`, make sure you copy this file from the `dist` directory of `react-ms-login` package and put it in your server where it's accessible and then change the script src to reflect the path.
+first script reference points to `authComplete.js`, make sure you copy this file from the `dist` directory of `react-ms-login` package and put it in your server where it's accessible and then change the script src to reflect the path.
 

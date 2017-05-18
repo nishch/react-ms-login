@@ -5,13 +5,15 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   entry: {
     "react-ms-login": [
-      './src/index.jsx',
+      './src/index.jsx'
+    ],
+    "authComplete": [
       './src/authComplete.js'
     ]
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'react-ms-login.min.js',
+    filename: '[name].js',
     libraryTarget: 'umd'
   },
   module: {

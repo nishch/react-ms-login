@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import ReactLoginMS from "../src/index.jsx";
+import ReactLoginMS from "../dist/react-ms-login.js";
 
 class ButtonContent extends React.Component {
     render() {
