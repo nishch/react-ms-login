@@ -1,7 +1,7 @@
 ## react-ms-login
 
 A react component to implement Microsoft login (via outlook.com, live.com, office365.com). Visit [Implement Microsoft login in a react.js app
-](https://bytesrecipe.in/posts/implement-microsoft-login-in-a-react-app) for a detailed write up.
+](https://blog.notabot.in/posts/implement-microsoft-login-in-a-react-app) for a detailed write up.
 
 ## How to use
 
